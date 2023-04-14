@@ -1,0 +1,21 @@
+{
+  "name": "mydocuments",
+  "version": "1.0.0",
+  "description": "个人技术文档网站",
+  "main": "index.js",
+  "scripts": {
+    "deploy:github": "github_deploy.sh",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "author": "小雨",
+  "license": "ISC",
+  "devDependencies": {
+    "flexsearch": "^0.7.31",
+    "vitepress": "^1.0.0-alpha.65",
+    "vitepress-plugin-search": "^1.0.4-alpha.20",
+    "vue": "^3.2.47"
+  }
+}
