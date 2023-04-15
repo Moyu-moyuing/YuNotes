@@ -6,8 +6,30 @@
   --docsearch-doctext-color:#66666699;
 }
 
-<<<<<<< HEAD
-/* 如何做出磨砂透明效果？ */
+/* 如何做出磨砂透明效果？ 参考源码效果*/
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar .curtain{
+      position:absolute;
+      right: 0;
+      bottom: -31px;
+      width: calc(100% - var(--vp-sidebar-width));
+      height: 32px
+  }
+
+  .VPNavBar.has-sidebar .curtain:before {
+      display: block;
+      width: 100%;
+      height: 32px;
+      background: linear-gradient(var(--vp-c-bg),transparent 70%);
+      content: ""
+  }
+}
+
+@media (min-width: 1440px) {
+  .VPNavBar.has-sidebar .curtain{
+      width:calc(100% - ((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)))
+  }
+}
 /* @media (min-width: 960px) {
   .VPNavBar.has-sidebar .content {
       -webkit-backdrop-filter: saturate(50%) blur(8px);
@@ -33,8 +55,6 @@
 /* .VPNavBar .fill{
   filter: blur(20px);
 } */
-=======
->>>>>>> 43050c608db98f26abd7ef945dabe73e6b2e2012
 /* 搜索区布局 */
 .VPNavBarSearch {
   display: flex;

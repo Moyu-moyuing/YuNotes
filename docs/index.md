@@ -1,5 +1,9 @@
 ---
 layout: home
+
+title: YuNotes
+titleTemplate: 凌晨三点的修狗的个人技术笔记整理
+
 hero:
   image:
     src: /img/logo.svg

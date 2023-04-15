@@ -5,10 +5,16 @@ export default defineConfig({
     description: '小雨的个人技术笔记',
     lang: 'zh-CN',
     base: '/YuNotes/',
+    lastUpdated: true,
+    head: [
+      [
+        'link', { rel: 'icon', href: '/img/notes.svg' }
+    ],
+
+    ],
     themeConfig: {
-      
       siteTitle:'小雨的技术笔记',
-      logo: '/img/greenNav.svg',
+      logo: '/img/notes.svg',
       
       nav: [
         { text: '指导', link: '/guide' },
@@ -28,7 +34,27 @@ export default defineConfig({
         +' | 版权所有 © 2023 '
         +'<a href="https://github.com/Moyu-moyuing/YuNotes">moyu & YuNotes contributors</a>'
 
-      }
+      },
+      
+      // 文档页配置
+      lastUpdatedText: '最后一次更新于',
+      editLink:{
+        pattern:'https://github.com/Moyu-moyuing/YuNotes/tree/master/docs/:path',
+        text: '在GitHub上编辑此页'
+      },
+      docFooter: {
+        prev: '上一篇',
+        next: '下一篇',
+      },
+      // 页面设置
+      returnToTopLabel:'返回顶部',
+      sidebarMenuLabel: '菜单栏',
+      // 大纲标题以及大纲中要为页面显示的页眉级别
+      outlineTitle: '大纲',
+      outline:'deep',
+      // 主题设置
+      darkModeSwitchLabel:'主题',
+      
     }
   })
   
