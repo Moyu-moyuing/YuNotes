@@ -6,6 +6,7 @@
   --docsearch-doctext-color:#66666699;
 }
 
+<<<<<<< HEAD
 /* 如何做出磨砂透明效果？ */
 /* @media (min-width: 960px) {
   .VPNavBar.has-sidebar .content {
@@ -32,6 +33,8 @@
 /* .VPNavBar .fill{
   filter: blur(20px);
 } */
+=======
+>>>>>>> 43050c608db98f26abd7ef945dabe73e6b2e2012
 /* 搜索区布局 */
 .VPNavBarSearch {
   display: flex;
