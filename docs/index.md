@@ -17,14 +17,14 @@ hero:
 features:
 
 - icon: 💡
-  title:  夯实基础，快速入门
-  details: 不仅具有作者计算机专业相关课程资料，同时涵盖各种市场流行技术的快速入门指南
+  title:  技术博客
+  details: 类似常规博客，需要一定的时间去研究的并输出的一小块知识，相对来说更多带有自己的思考和理解...
 - icon: 💻
-  title: 构建系统学习体系
+  title: 专业理论知识
   details: 涵盖计算机专业基础知识。包括数据结构、计算机组成原理、操作系统、计算机网络、软件工程、数据库概论等主要课程
 - icon: 📚
   title: 全栈技术笔记
-  details: 不定期更新作者的全栈技术学习笔记，现包括C++基础、Java基础、Vue.js框架、Three.js框架、JavaScript、SpringBoot、MyBatis、MySQL、MongoDB、Reids等
+  details: 更多则是作者平常通过视频教程、文档等学习做的笔记，分类明确，系统整理，现包括C++领域、前端开发、后端开发、图形开发等
 - icon: 🤖
   title: 前沿知识
   details: 涉及到作者所接触到的前沿知识，包括人工智能领域的深度学习方向、计算机图形学基础

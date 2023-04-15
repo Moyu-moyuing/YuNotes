@@ -6,6 +6,32 @@
   --docsearch-doctext-color:#66666699;
 }
 
+/* 如何做出磨砂透明效果？ */
+/* @media (min-width: 960px) {
+  .VPNavBar.has-sidebar .content {
+      -webkit-backdrop-filter: saturate(50%) blur(8px);
+      backdrop-filter: saturate(50%) blur(8px);
+      background: rgba(255,255,255,.7);
+  }
+
+  .dark .VPNavBar.has-sidebar .content {
+      background: rgba(36,36,36,.7)
+  }
+
+  @supports not (backdrop-filter: saturate(50%) blur(8px)) {
+      .VPNavBar.has-sidebar .content{
+          background:rgba(255,255,255,.95)
+      }
+
+      .dark .VPNavBar.has-sidebar .content{
+          background: rgba(36,36,36,.95)
+      }
+  }
+} */
+
+/* .VPNavBar .fill{
+  filter: blur(20px);
+} */
 /* 搜索区布局 */
 .VPNavBarSearch {
   display: flex;
