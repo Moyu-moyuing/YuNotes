@@ -37,7 +37,7 @@ JavaScript程序不能独立运行，它需要被嵌入HTML中，浏览器才能
 
 代码写在以.js结尾的文件里，通过 `<script></script>` 标签引入HTML页面当中
 
-```
+```html
 <body>
     <script src="my.js"></script>
 </body>
@@ -53,7 +53,7 @@ script标签中间无需写代码，否则会被忽略，外部JavaScript文件�
 
 示例：
 
-```
+```html
 <body>
     <button onclick="alert()">提示</button>
 </body>
@@ -97,13 +97,11 @@ script标签中间无需写代码，否则会被忽略，外部JavaScript文件�
 
 控制台输出语法，用于调试
 
-
 输入语法：
 
 `prompt('请输入您的姓名')`
 
 显示一个对话框，对话框中包含一天文字信息，用来提示用户输入
-
 
 JavaScript代码执行顺序：
 
@@ -129,7 +127,7 @@ JavaScript代码执行顺序：
 
 示例：以下语法错误，因为地址不同
 
-```
+```javascript
 const arr=[]
 arr=[1,2,3]
 const obj ={}
@@ -140,7 +138,7 @@ obj={
 
 但可以改为以下方式
 
-```
+```javascript
 const arr=[]
 arr[0]=1
 arr[1]=2
@@ -202,20 +200,18 @@ var可以先使用再声明，var声明过的变量可以重复声明，var在�
 
 增添：
 
-```
+```javascript
 arr.push(元素1,元素2,...,元素n)//将一个或多个元素添加到数组的末尾，并返回数组的新长度
 arr.unshift(内容)//将一个或多个元素添加到数组的开头，并返回该数组的长度
 ```
 
 删除：
 
-```
+```javascript
 arr.pop()//从数组中删除最后一个元素，并返回该元素值
 arr.shift()//从数组中删除第一个元素，并返回该元素值
 arr.splice(start,deleteCount)//删除指定元素，deleteCount缺省为从指定删除到最后
 ```
-
-
 
 ---
 
@@ -245,7 +241,6 @@ JavaScript 是若数据类型，变量到底属于哪种类型只有赋值后才
 
 NaN代表一个计算错误，任何对NaN的操作都会返回NaN
 
-
 #### 4.1.2 string 字符串型
 
 通过单引号（' '）、双引号（""）或反引号（`）包裹的数据都是字符串
@@ -260,7 +255,7 @@ NaN代表一个计算错误，任何对NaN的操作都会返回NaN
 
 `` 反引号，内容拼接变量时，用${ }包住变量
 
-```
+```javascript
 let age=18
 document.write(`我今年18岁了`)
 document.write(`我今年${age}岁了`)
@@ -285,7 +280,7 @@ undefined表示没赋值，null表示赋值了，内容为空
 
 使用场景：把null作为尚未创建的对象
 
-```
+```javascript
 console.log(undefined+1)//NaN
 console.log(null+1)//1
 ```
@@ -296,7 +291,7 @@ null：空对象；`null === let obj={}`
 
 1、使用控制台输出
 
-```
+```javascript
 let age=18
 let name='刘'
 let flag=false
@@ -319,7 +314,6 @@ typeof运算符可以返回被检测的数据类型
 栈中存放简单数据类型、堆中存放复杂数据类型
 
 引用类型的变量（栈）里存放的是地址，真正的对象实例存放在堆中
-
 
 ## 5. 类型转换
 
@@ -367,7 +361,7 @@ NaN不可进行运算，包括比较运算符，涉及到NaN的比较都是false
 
 函数声明：
 
-```
+```javascript
 function 函数名(参数列表){
    函数体
 }
@@ -405,7 +399,7 @@ function 函数名(参数列表){
 
 立即执行函数：避免全局变量之间的污染
 
-```
+```javascript
 (function(形参列表) { console.log(11) })(实参值列表);
 (function(形参列表) { console.log(11) }(实参值列表));
 ```
@@ -416,7 +410,7 @@ function 函数名(参数列表){
 
 ## 7.逻辑中断
 
-```
+```javascript
 function getSum(x,y){
      x=x||0
      y=y||0
@@ -441,13 +435,13 @@ object=属性+方法
 
 声明：
 
-`let 对象名={} ` 或者` let 对象名 = new Object()`
+`let 对象名={} ` 或者 ` let 对象名 = new Object()`
 
 属性：信息特征；属性成对存在，包括属性名和值，之间用 `:`分割；多个属性之间用 `,`分割；属性就是依附在对象上的变量；属性名可以加""或者''
 
 方法：功能行为
 
-```
+```javascript
 let 对象名 = {
     属性名:属性值
     方法名:函数
@@ -458,7 +452,7 @@ let 对象名 = {
 
 `对象名['属性名']`
 
-```
+```javascript
 let obj{
    'obj-name':'name'
 }
@@ -479,7 +473,7 @@ obj['obj-name']
 
 方法名可以加""或者''
 
-```
+```javascript
 let person = {  
 	name: 'zhang',  
 	方法名: function(){  
@@ -492,7 +486,7 @@ let person = {
 
 对象遍历：
 
-```
+```javascript
 let arr=[1,2,3]
 for(let k in arr){
 //k为索引号，字符串型
@@ -509,7 +503,7 @@ for(let key in obj){
 }
 ```
 
-for in语法中的key是一个变量，在循环过程中依次代表对象的属性名，必须要`[]`解析
+for in语法中的key是一个变量，在循环过程中依次代表对象的属性名，必须要 `[]`解析
 
 内置对象：
 
