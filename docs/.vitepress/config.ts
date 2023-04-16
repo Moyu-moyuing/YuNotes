@@ -1,15 +1,28 @@
 import { defineConfig } from 'vitepress'
-
+// 智能感知提示defineConfig
 export default defineConfig({
     title: 'YuNotes',
+    titleTemplate:'凌晨三点的修狗的个人技术笔记整理',
     description: '小雨的个人技术笔记',
     lang: 'zh-CN',
     base: '/YuNotes/',
+    // 基础路由
     lastUpdated: true,
+    // 最近更新时间
+    appearance: true,
+    // 主题配置
+    ignoreDeadLinks: true,
+    // 忽略死链接，即文档为空不跳转
+    markdown: {
+      theme:'material-theme-palenight',
+      // markdown代码板块主题
+      lineNumbers:true,
+      // 代码行数标识
+    },
     head: [
       [
         'link', { rel: 'icon', href: '/img/notes.svg' }
-    ],
+      ],
 
     ],
     themeConfig: {
@@ -40,7 +53,7 @@ export default defineConfig({
       lastUpdatedText: '最后一次更新于',
       editLink:{
         pattern:'https://github.com/Moyu-moyuing/YuNotes/tree/master/docs/:path',
-        text: '在GitHub上编辑此页'
+        text: '为此页内容提供修改建议'
       },
       docFooter: {
         prev: '上一篇',
