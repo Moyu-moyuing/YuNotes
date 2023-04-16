@@ -6,7 +6,7 @@
   --docsearch-doctext-color:#66666699;
 }
 
-/* 如何做出磨砂透明效果？ 参考源码效果*/
+/* 如何做出磨砂透明效果？ */
 @media (min-width: 960px) {
   .VPNavBar.has-sidebar .curtain{
       position:absolute;
@@ -26,7 +26,7 @@
 }
 
 @media (min-width: 1440px) {
-  .VPNavBar.has-sidebar .curtain{
+  .VPNavBar.has-sidebar .curtain {
       width:calc(100% - ((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)))
   }
 }

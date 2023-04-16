@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { getSidebarData,getNavData } from './navSidebarUtil'
 // 智能感知提示defineConfig
 export default defineConfig({
     title: 'YuNotes',
@@ -29,11 +30,14 @@ export default defineConfig({
       siteTitle:'小雨的技术笔记',
       logo: '/img/notes.svg',
       
-      nav: [
-        { text: '指导', link: '/guide' },
-        { text: '配置', link: '/config' },
-        
-      ],
+      // nav: [
+      //    { text: '指导', link: '/guide' },
+      //    { text: '配置', link: '/config' },
+      // ],
+      // 扫描目录自动生成顶部导航
+      nav:getNavData({enableDirActiveMatch:true}),
+      // 扫描目录自动生成侧栏
+      sidebar: getSidebarData(),
       socialLinks:[
         {
           icon: 'github',

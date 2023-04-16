@@ -13,6 +13,7 @@
   "author": "小雨",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "flexsearch": "^0.7.31",
     "vitepress": "^1.0.0-alpha.65",
     "vitepress-plugin-search": "^1.0.4-alpha.20",
