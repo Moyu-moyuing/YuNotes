@@ -35,7 +35,22 @@ export default defineConfig({
       //    { text: '配置', link: '/config' },
       // ],
       // 扫描目录自动生成顶部导航
-      nav:getNavData({enableDirActiveMatch:true}),
+      nav:[
+          {
+            text:'导航',
+            link:'/guide/阅读须知/'
+          },
+          {
+            text:'博客',
+            link:'/blog/技术博客/'
+          },
+          {
+            text:'文档',
+            items:getNavData({enableDirActiveMatch:true,dirName:'articles'})
+          },
+
+        ],
+      
       // 扫描目录自动生成侧栏
       sidebar: getSidebarData(),
       socialLinks:[
@@ -71,6 +86,8 @@ export default defineConfig({
       outline:'deep',
       // 主题设置
       darkModeSwitchLabel:'主题',
+
+      
       
     }
   })

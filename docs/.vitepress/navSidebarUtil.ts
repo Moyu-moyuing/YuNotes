@@ -122,7 +122,8 @@ interface NavGenerateConfig {
 }
 
 export function getNavData(navGenerateConfig: NavGenerateConfig) {
-  const { enableDirActiveMatch, dirName = 'articles', maxLevel = 1 } = navGenerateConfig
+  // const { enableDirActiveMatch, dirName = 'articles', maxLevel = 1 } = navGenerateConfig
+  const { enableDirActiveMatch, dirName, maxLevel = 1 } = navGenerateConfig
   const dirFullPath = path.resolve(__dirname, `../${dirName}`)
   const result = getNavDataArr(dirFullPath, 1, maxLevel, enableDirActiveMatch)
   //  console.log('navData')
