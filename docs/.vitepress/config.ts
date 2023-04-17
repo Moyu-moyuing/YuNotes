@@ -24,7 +24,7 @@ export default defineConfig({
     },
     head: [
       [
-        'link', { rel: 'icon', href: '/img/notes.svg' }
+        'link', { rel: 'icon', href: '/YuNotes/img/notes.svg' }
       ],
 
     ],
