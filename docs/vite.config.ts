@@ -26,7 +26,7 @@
 /**
  * vitepress-plugin-pagefind的配置如下
  */
-import { pagefindPlugin } from "vitepress-plugin-pagefind"
+import { chineseSearchOptimize,pagefindPlugin } from "vitepress-plugin-pagefind"
 import { defineConfig } from "vite"
 
 export default defineConfig({
@@ -46,9 +46,9 @@ export default defineConfig({
    * div.aside:侧栏
    * a.header-anchor:头部导航
    */
-    excludeSelector:['img','a.header-anchor','div.aside'],
+    //excludeSelector:['img','a.header-anchor','div.aside'],
     // 检索语言配置
-    forceLanguage: 'zh-cn',
+    //forceLanguage: 'zh-cn',
     //搜索优化：中文自动分词
     customSearchQuery(input){
       //将搜索每个中文单字两侧加空格
