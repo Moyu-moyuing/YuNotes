@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress'
+// import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { getSidebarData,getNavData } from './navSidebarUtil'
+
 // 智能感知提示defineConfig
 export default defineConfig({
     title: 'YuNotes',
@@ -85,10 +87,18 @@ export default defineConfig({
       outlineTitle: '大纲',
       outline:'deep',
       // 主题设置
-      darkModeSwitchLabel:'主题',
+      darkModeSwitchLabel:'主题',    
+    },
 
-      
-      
-    }
+    //搜索配置
+    // vite: {
+    //   plugins:[pagefindPlugin({
+    //     btnPlaceholder: '搜索',
+    //     placeholder: '搜索文档',
+
+    //   })],
+    // } 
+
+
   })
   
