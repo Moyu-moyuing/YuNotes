@@ -2,7 +2,7 @@
 layout: home
 
 title: YuNotes
-titleTemplate: 凌晨三点的修狗的个人技术笔记整理
+titleTemplate: 凌晨三点的修狗的知识星球
 
 hero:
   image:

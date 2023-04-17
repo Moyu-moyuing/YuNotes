@@ -3,7 +3,7 @@ import { getSidebarData,getNavData } from './navSidebarUtil'
 // 智能感知提示defineConfig
 export default defineConfig({
     title: 'YuNotes',
-    titleTemplate:'凌晨三点的修狗的个人技术笔记整理',
+    titleTemplate:'凌晨三点的修狗的知识星球',
     description: '小雨的个人技术笔记',
     lang: 'zh-CN',
     base: '/YuNotes/',
@@ -27,7 +27,7 @@ export default defineConfig({
 
     ],
     themeConfig: {
-      siteTitle:'小雨的技术笔记',
+      siteTitle:'YuNotes',
       logo: '/img/notes.svg',
       
       // nav: [
