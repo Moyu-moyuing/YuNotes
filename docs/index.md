@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /guide/what-is-vitepress
+      link: /guide/阅读须知/
     - theme: alt
       text: 在GitHub上查看
       link: https://github.com/vuejs/vitepress
