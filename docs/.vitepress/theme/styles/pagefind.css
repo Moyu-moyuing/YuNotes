@@ -1,5 +1,5 @@
 .blog-search{
-    --docsearch-doctext-color:#66666699;
+    --docsearch-doctext-color:#909399;
 }
 /* .blog-search{
     display: flex;
@@ -60,6 +60,14 @@ const flexValue = computed(() => (isMinimized.value ? 0 : 1))
       background: var(--vp-c-bg-alt);
   }
 }
+@media (max-width: 760px){
+  .blog-search .nav-search-btn-wait:hover{
+    border: 1px solid transparent;
+
+  }
+}
+
+
 /* @media (max-width: 768px){
     .metaKey{
         display: none;

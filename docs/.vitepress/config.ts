@@ -89,7 +89,7 @@ export default defineConfig({
       // 主题设置
       darkModeSwitchLabel:'主题',    
     },
-
+    cleanUrls: true,
     //搜索配置
     // vite: {
     //   plugins:[pagefindPlugin({
