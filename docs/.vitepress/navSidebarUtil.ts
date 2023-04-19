@@ -1,7 +1,7 @@
 /**
  * 这是侧栏和导航自动动态生成配置文件
  */
-import path from 'path'
+import  path  from 'path'
 import { readdirSync, statSync } from 'fs'
 
 
