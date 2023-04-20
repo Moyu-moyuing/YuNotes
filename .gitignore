@@ -1,0 +1,4 @@
+node_modules
+github_deploy.sh
+docs/.vitepress/cache
+docs/.vitepress/dist
