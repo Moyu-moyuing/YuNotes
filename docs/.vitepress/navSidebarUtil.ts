@@ -33,9 +33,19 @@ interface SidebarGenerateConfig {
    */
   ignoreDirNames?: string[]
 }
-export function getSidebarData(sidebarGenerateConfig: SidebarGenerateConfig = {}) {
+
+export function getSidebar(){
+  let result={}
+  const dirNames=['articles','blog','guide']
+  dirNames.forEach(function(item){
+    result = Object.assign(result,getSidebarData({dirName:item}))
+  })
+  return result
+}
+ function getSidebarData(sidebarGenerateConfig: SidebarGenerateConfig = {}) {
   const {
-    dirName = 'articles',
+    dirName,
+    // dirName = 'articles',
     ignoreFileName = 'index.md',
     ignoreDirNames = ['demo', 'asserts'],
   } = sidebarGenerateConfig
@@ -49,8 +59,6 @@ export function getSidebarData(sidebarGenerateConfig: SidebarGenerateConfig = {}
     const arr = getSideBarItemTreeData(subDirFullName, 1, 2, ignoreFileName, ignoreDirNames)
     obj[property] = arr
   })
-  // console.log('sidebarData')
-  // console.log(obj)
   return obj
 }
 

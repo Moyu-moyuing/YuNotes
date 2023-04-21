@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitepress'
 // import { pagefindPlugin } from 'vitepress-plugin-pagefind'
-import { getSidebarData,getNavData } from './navSidebarUtil'
+import { getSidebar,getNavData } from './navSidebarUtil'
 
 // 智能感知提示defineConfig
+
 export default defineConfig({
     title: 'YuNotes',
     titleTemplate:'凌晨三点的修狗的知识星球',
@@ -44,7 +45,7 @@ export default defineConfig({
           },
           {
             text:'博客',
-            link:'/blog/技术博客/'
+            items:getNavData({enableDirActiveMatch:true,dirName:'blog'})
           },
           {
             text:'文档',
@@ -54,7 +55,7 @@ export default defineConfig({
         ],
       
       // 扫描目录自动生成侧栏
-      sidebar: getSidebarData(),
+      sidebar: getSidebar(),
       socialLinks:[
         {
           icon: 'github',
