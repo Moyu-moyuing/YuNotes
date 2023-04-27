@@ -31,6 +31,7 @@ import {
   pagefindPlugin
 } from 'vitepress-plugin-pagefind'
 import { defineConfig } from 'vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
   plugins: [
@@ -61,6 +62,7 @@ export default defineConfig({
           .replace(/\s+/g, ' ')
           .trim()
       }
-    })
+    }),
+    vueJsx()
   ]
 })

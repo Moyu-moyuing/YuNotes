@@ -4,6 +4,7 @@
 import path from 'path'
 import { readdirSync, statSync } from 'fs'
 
+
 /**
  * 判断是否为markdown文件
  *
@@ -46,7 +47,7 @@ function getSidebarData(sidebarGenerateConfig: SidebarGenerateConfig = {}) {
     dirName,
     // dirName = 'articles',
     ignoreFileName = 'index.md',
-    ignoreDirNames = ['demo', 'asserts']
+    ignoreDirNames = ['demo', 'asserts'],
   } = sidebarGenerateConfig
   // 获取目录的绝对路径
   const dirFullPath = path.resolve(__dirname, `../${dirName}`)
@@ -55,13 +56,7 @@ function getSidebarData(sidebarGenerateConfig: SidebarGenerateConfig = {}) {
   allDirAndFileNameArr.map(dirName => {
     let subDirFullName = path.join(dirFullPath, dirName)
     const property = subDirFullName.split('docs')[1].replace(/\\/g, '/') + '/'
-    const arr = getSideBarItemTreeData(
-      subDirFullName,
-      1,
-      2,
-      ignoreFileName,
-      ignoreDirNames
-    )
+    const arr = getSideBarItemTreeData(subDirFullName, 1, 2, ignoreFileName, ignoreDirNames)
     obj[property] = arr
   })
   return obj
@@ -92,35 +87,23 @@ function getSideBarItemTreeData(
         // 当前为文件夹
         const dirData: SideBarItem = {
           text: fileOrDirName,
-          collapsed: false
+          collapsed: false,
         }
         if (level !== maxLevel) {
-          dirData.items = getSideBarItemTreeData(
-            fileOrDirFullPath,
-            level + 1,
-            maxLevel,
-            ignoreFileName,
-            ignoreDirNames
-          )
+          dirData.items = getSideBarItemTreeData(fileOrDirFullPath, level + 1, maxLevel, ignoreFileName, ignoreDirNames)
         }
         if (dirData.items) {
           dirData.collapsible = true
         }
         result.push(dirData)
       }
-    } else if (
-      isMarkdownFile(fileOrDirName) &&
-      ignoreFileName !== fileOrDirName
-    ) {
+    } else if (isMarkdownFile(fileOrDirName) && ignoreFileName !== fileOrDirName) {
       // 当前为文件
       const matchResult = fileOrDirName.match(/(.+)\.md/)
       const text = matchResult ? matchResult[1] : fileOrDirName
       const fileData: SideBarItem = {
         text,
-        link: fileOrDirFullPath
-          .split('docs')[1]
-          .replace('.md', '')
-          .replace(/\\/g, '/')
+        link: fileOrDirFullPath.split('docs')[1].replace('.md', '').replace(/\\/g, '/'),
       }
       result.push(fileData)
     }
@@ -204,38 +187,23 @@ interface NavItem {
  *
  * @return  {NavItem[]}               导航数据数组
  */
-function getNavDataArr(
-  dirFullPath: string,
-  level: number,
-  maxLevel: number,
-  enableActiveMatch: boolean
-): NavItem[] {
+function getNavDataArr(dirFullPath: string, level: number, maxLevel: number, enableActiveMatch: boolean): NavItem[] {
   // 获取所有文件名和目录名
   const allDirAndFileNameArr = readdirSync(dirFullPath)
   const result: NavItem[] = []
   allDirAndFileNameArr.map((fileOrDirName: string, idx: number) => {
     const fileOrDirFullPath = path.join(dirFullPath, fileOrDirName)
     const stats = statSync(fileOrDirFullPath)
-    const link = fileOrDirFullPath
-      .split('docs')[1]
-      .replace('.md', '')
-      .replace(/\\/g, '/')
-    const text = fileOrDirName.match(/^[0-9]{2}-.+/)
-      ? fileOrDirName.substring(3)
-      : fileOrDirName
+    const link = fileOrDirFullPath.split('docs')[1].replace('.md', '').replace(/\\/g, '/')
+    const text = fileOrDirName.match(/^[0-9]{2}-.+/) ? fileOrDirName.substring(3) : fileOrDirName
     if (stats.isDirectory()) {
       // 当前为文件夹
       const dirData: NavItem = {
         text,
-        link: `${link}/`
+        link: `${link}/`,
       }
       if (level !== maxLevel) {
-        dirData.children = getNavDataArr(
-          fileOrDirFullPath,
-          level + 1,
-          maxLevel,
-          enableActiveMatch
-        )
+        dirData.children = getNavDataArr(fileOrDirFullPath, level + 1, maxLevel, enableActiveMatch)
       }
       if (enableActiveMatch) {
         dirData.activeMatch = link.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '/'
@@ -247,7 +215,7 @@ function getNavDataArr(
       // 当前为文件
       const fileData: NavItem = {
         text,
-        link: link
+        link: link,
       }
       if (enableActiveMatch) {
         fileData.activeMatch = link.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '/'
@@ -261,11 +229,11 @@ function getNavDataArr(
   return result
 }
 /**
- * 记录一个正则表达式的坑，在赋值时，事实上new RegExp已经会匹配头尾字符串的/,
+ * 记录一个正则表达式的坑，在赋值时，
  * 若开始是'/articles/AI相关/',则会形成 //articles/AI相关//
  * 因此要去掉头部和尾部反斜杠，只包含字符串内容即可
  * 具体机制有待研究。。。
- *
+ * 
  */
 /**
  * 上条bug错误，应该是C++字符串中的+问题，应该进行转义
@@ -276,5 +244,5 @@ function getNavDataArr(
 /**
  * 记录项目新问题：动态生成的目录在项目构建时就已经将大纲定死
  * 若在项目构建后正在运行时进行文件夹改动，在侧栏不会随之变化
- * 除非重新构建项目
+ * 除非重新构建项目 
  */
