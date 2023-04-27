@@ -9,7 +9,8 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "docs:preview": "vitepress preview docs",
-    "lint": "eslint . --ext .js,.ts,.tsx,.vue"
+    "lint": "eslint . --ext .js,.ts,.tsx,.vue --fix",
+    "prettier-format": "prettier --config .prettierrc.js \"docs/**/*.{vue,js,ts}\" --write"
   },
   "author": "小雨",
   "license": "MIT",
@@ -20,9 +21,12 @@
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.11.0",
     "flexsearch": "^0.7.31",
     "husky": "^8.0.3",
+    "prettier": "^2.8.8",
     "vitepress": "^1.0.0-alpha.65",
     "vitepress-plugin-search": "^1.0.4-alpha.20",
     "vue": "^3.2.47"

@@ -1,0 +1,21 @@
+# 源代码文件
+docs/.vitepress/dist
+docs/.vitepress/cache
+docs/public
+
+# 配置文件
+node_modules
+.gitignore
+.eslinttrc.js
+.eslintignore
+.prettierrc.js
+.prettierignore
+commitlint.config.js
+tsconfig.json
+github_deploy.sh
+LICENSE
+README.md
+
+# 部署配置和编辑器配置
+.github
+.vscode

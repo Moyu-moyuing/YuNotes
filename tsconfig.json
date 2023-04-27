@@ -1,28 +1,25 @@
 {
-    // 项目选项
-    "compilerOptions": {
-      "module": "ESNext",//生成代码模板标准
-      "suppressImplicitAnyIndexErrors": true,//忽略所有索引错误
-      "target": "esnext", //目标语言版本
-      "moduleResolution": "node",//决定如何处理模块
-      "esModuleInterop": true,//为了import cjs文件方便
-      "strict": true,//开启所有严格的类型检查
-      "skipLibCheck": true,
-      "noUnusedLocals": true,//是否检查未使用的局部变量
-      "resolveJsonModule": true,//是否解析 JSON 模块，为了import json文件方便
-      "allowSyntheticDefaultImports": true,//允许有没有默认导出的模块导入
-      "isolatedModules": true,
-      "preserveValueImports": true,
-      "importsNotUsedAsValues": "error",
-      "jsx": "preserve",//在.tsx文件里支持JSX
-      "lib": ["ESNext", "DOM"] //编译过程中需要引用的库
-    },
-    // 指定被编译文件所在目录
-    "include": [
-      "docs",
-      "docs/.vitepress/*.ts"
-    ],
-    // 指定不需要被编译的目录
-    // **代表任意目录，*代表任意文件
-    "exclude": ["**/node_modules/**", "**/dist/**"]
-  }
+  // 项目选项
+  "compilerOptions": {
+    "module": "ESNext", //生成代码模板标准
+    "suppressImplicitAnyIndexErrors": true, //忽略所有索引错误
+    "target": "esnext", //目标语言版本
+    "moduleResolution": "node", //决定如何处理模块
+    "esModuleInterop": true, //为了import cjs文件方便
+    "strict": true, //开启所有严格的类型检查
+    "skipLibCheck": true,
+    "noUnusedLocals": true, //是否检查未使用的局部变量
+    "resolveJsonModule": true, //是否解析 JSON 模块，为了import json文件方便
+    "allowSyntheticDefaultImports": true, //允许有没有默认导出的模块导入
+    "isolatedModules": true,
+    "preserveValueImports": true,
+    "importsNotUsedAsValues": "error",
+    "jsx": "preserve", //在.tsx文件里支持JSX
+    "lib": ["ESNext", "DOM"] //编译过程中需要引用的库
+  },
+  // 指定被编译文件所在目录
+  "include": ["docs", "docs/.vitepress/*.ts"],
+  // 指定不需要被编译的目录
+  // **代表任意目录，*代表任意文件
+  "exclude": ["**/node_modules/**", "**/dist/**"]
+}
