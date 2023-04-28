@@ -5,6 +5,7 @@ docs/public
 
 # 配置文件
 node_modules
+.husky
 .gitignore
 .eslinttrc.js
 .eslintignore
