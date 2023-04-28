@@ -9,8 +9,9 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "docs:preview": "vitepress preview docs",
-    "lint": "eslint . --ext .js,.ts,.tsx,.vue --fix",
-    "prettier-format": "prettier --config .prettierrc.js \"docs/**/*.{vue,js,ts}\" --write"
+    "lint": "eslint \"docs/**/*.{vue,js,ts}\" --fix",
+    "prettier-format": "prettier --config .prettierrc.js \"docs/**/*.{vue,js,ts}\" --write",
+    "prepare": "husky install"
   },
   "author": "小雨",
   "license": "MIT",
@@ -26,6 +27,7 @@
     "eslint-plugin-vue": "^9.11.0",
     "flexsearch": "^0.7.31",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "vitepress": "^1.0.0-alpha.65",
     "vitepress-plugin-search": "^1.0.4-alpha.20",
@@ -35,8 +37,15 @@
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "vitepress-plugin-pagefind": "^0.2.3"
   },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue}": [
+      "npm run prettier-format",
+      "npm run lint"
+    ]
+  },
   "husky": {
-    "hook": {
+    "hooks": {
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
