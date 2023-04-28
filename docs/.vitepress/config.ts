@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-// import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { getSidebar, getNavData } from './navSidebarUtil'
 
 // 解构defineConfig
