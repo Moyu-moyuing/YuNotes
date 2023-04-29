@@ -17,7 +17,7 @@ Code Lint的工作原理是借助一些lint工具对代码进行静态分析，�
 * husky 能够监听git hooks的nodejs包，让nodejs开发者处理git hooks任务变得更加容易
 * lint-staged 可以将git“已暂存(staged)”的文件作为参数传入你要执行的shell script之中
 
-## Commitlint是什么
+## CommitLint是什么
 
 在多人协作的背景下，git 仓库和workflow的作用很重要。而对于 commit 提交的信息说明存在一定规范，现使用 commitlint + husky 规范 `git commit -m "msg"` 中的描述信息。
 
@@ -43,20 +43,27 @@ Git官方解释：钩子都被存储在 Git 目录下的 `hooks` 子目录中。
 
 ### 安装commitlint
 
-* @commitlint/cli 是[commitlint](https://commitlint.js.org/#/)提供的命令行工具，安装后会将cli脚本放置在./node_modules/.bin/目录下
-* @commitlint/config-conventional是社区中一些共享配置[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)，我们可以扩展这些配置，也可以不安装这个包自定义配置
+* `@commitlint/cli` 是[commitlint](https://commitlint.js.org/#/)提供的命令行工具，安装后会将cli脚本放置在./node_modules/.bin/目录下
+* `@commitlint/config-conventional`是社区中一些共享配置[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)，我们可以扩展这些配置，也可以不安装这个包自定义配置
 
 ```powershell
 npm install --save-dev @commitlint/config-conventional @commitlint/cli
 ```
 
-生成配置文件commitlint.config.js，当然也可以是 .commitlintrc.js，实际是配置@commitlint/cli的配置文件
+生成配置文件commitlint.config.js，当然也可以是 .commitlintrc.js，实际是配置`@commitlint/cli`的配置文件
 
 ```powershell
 echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js
 ```
 
+::: warning 注意
+Windows操作系统下进行如此命令，生成的文件编码格式为UTF-16 LE，执行时会报错：
+commitlint.config.js:1...SyntaxError: Invalid or unexpected token
+:::
 
+::: tip 解决办法
+可以将commitlint.config.js文件手动改为UTF-8格式即可解决问题，[点我查看原帖](https://github.com/conventional-changelog/commitlint/issues/614)
+:::
 
 ### 安装husky配置commit-msg
 
@@ -106,7 +113,25 @@ npm run prepare
 npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"
 ```
 
-### Commitlint 提交规范
+::: warning 注意
+Windows操作系统下进行如此命令无效，因为$1在Linux系统下shell命令里面代表参数，而Windows的cmd没有$操作符。
+:::
+
+::: tip 解决办法
+此命令意思是在.hsuky目录下添加一个commit-msg文件，再对commit-msg文件写该npx命令。
+
+可以先执行以下命令添加commit-msg文件
+
+```powershell
+npx husky add .husky/commit-msg
+```
+
+然后在创建的文件里面填入 `npx --no -- commitlint --edit`即可。
+
+[点我查看原帖](https://blog.csdn.net/qq_41308489/article/details/121734786)
+:::
+
+### CommitLint 提交规范
 
 社区共享配置conventional——[约定式提交 (conventionalcommits.org)](https://www.conventionalcommits.org/zh-hans/v1.0.0/)
 
