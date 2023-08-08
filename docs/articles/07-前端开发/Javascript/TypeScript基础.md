@@ -750,7 +750,7 @@ let p3:Point2D=new Point3D()
    
     如果返回值类型是对象类型，此时成员多的可以赋值给成员少的。
    
-    ::: warning 注意
+    ::: warning
 
     这里的`type`关键字是指给函数类型定义别名。
    
@@ -1319,7 +1319,7 @@ TS为JS运行时可用的所有标准化内置API都提供了声明文件。
     1. 在JS项目迁移到TS项目时，为了让已有的.js文件有类型声明。
     2. 成为库作者，创建库为其他人使用。
     
-    ::: warning 注意
+    ::: warning
 
     类型声明文件的编写与模块化方式相关，不同的模块化方式有不同的写法。JS模块化的发展历经多种变化（AMD、CommonJS、UMD、ESModule等），而TS支持各种模块化形式的类型声明。这就导致类型声明文件[相关内容](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html)又多又杂。
     
