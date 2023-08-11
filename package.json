@@ -10,8 +10,8 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "docs:preview": "vitepress preview docs",
-    "lint": "eslint \"./docs/**/*.{vue,js,ts}\" --fix",
-    "prettier-format": "prettier --config .prettierrc.cjs \"./docs/**/*.{vue,js,ts}\" --write",
+    "lint": "eslint \"./docs/**/*.{vue,js,ts,mts}\" --fix",
+    "prettier-format": "prettier --config .prettierrc.cjs \"./docs/**/*.{vue,js,ts,,mts}\" --write",
     "prepare": "husky install"
   },
   "author": "小雨",
