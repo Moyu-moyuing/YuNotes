@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
-import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+// import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { getSidebar, getNavData } from './navSidebarUtil'
+import algolia from './algolia'
 
 // 解构defineConfig
 
@@ -46,7 +47,7 @@ export default defineConfig({
         items: getNavData({ enableDirActiveMatch: true, dirName: 'articles' })
       }
     ],
-
+    algolia,
     // 扫描目录自动生成侧栏
     sidebar: getSidebar(),
     socialLinks: [
