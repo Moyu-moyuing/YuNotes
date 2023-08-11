@@ -17,7 +17,8 @@ const currentHref: string = location.href
 const getGitHubLink: (name: string) => string = name => {
   return `https://github.com/${reName(name)}`
 }
-const license: string = 'Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)'
+const license: string =
+  'Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)'
 const licenseLink: string = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
 const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
 </script>
