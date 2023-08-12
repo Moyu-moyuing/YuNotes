@@ -6,7 +6,7 @@ titleTemplate: 凌晨三点的修狗的知识星球
 
 hero:
   image:
-    src: /img/log.svg
+    src: /img/logo.svg
     alt: 网页logo
   name: 凌晨三点的修狗
   text: 个人技术笔记
@@ -67,12 +67,4 @@ const members = [
   />
 </VPTeamPage>
 
-<style>
-:root {
-    --vp-home-hero-image-background-image: linear-gradient( -45deg, #bd34fe 50%, #47caff 50% );
-    /* --vp-home-hero-image-filter: blur(40px); */
-    --vp-home-hero-image-filter: blur(80px);
-  --vp-home-hero-name-color: transparent; 
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30% , #41d1ff );
-}
-</style>
+
