@@ -1,6 +1,6 @@
 {
   "name": "mydocuments",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "个人技术文档网站",
   "main": "index.js",
   "type": "module",
