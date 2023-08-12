@@ -24,10 +24,10 @@ export default defineConfig({
     lineNumbers: true
     // 代码行数标识
   },
-  head: [['link', { rel: 'icon', href: '/YuNotes/img/logo.svg' }]],
+  head: [['link', { rel: 'icon', href: '/YuNotes/img/imge.svg' }]],
   themeConfig: {
     siteTitle: 'YuNotes',
-    logo: '/img/logo.svg',
+    logo: '/img/imge.svg',
     // nav: [
     //    { text: '指导', link: '/guide' },
     //    { text: '配置', link: '/config' },
