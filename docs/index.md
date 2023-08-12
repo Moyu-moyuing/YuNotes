@@ -8,9 +8,9 @@ hero:
   image:
     src: /img/logo.svg
     alt: 网页logo
-  name: 凌晨三点的修狗
-  text: 个人技术笔记
-  tagline:  Смерть не принадлежит рабочему классу! 
+  name: YuNotes
+  text: 凌晨三点的修🐶
+  tagline:  个人技术网站 
   actions:
     - theme: brand
       text: 快速开始
@@ -66,5 +66,3 @@ const members = [
     :members="members"
   />
 </VPTeamPage>
-
-
