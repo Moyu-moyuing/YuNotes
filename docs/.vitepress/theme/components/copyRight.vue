@@ -25,7 +25,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
 
 <template>
   <div
-    class="mb-12 p-4 relative border-solid border rounded-lg w-full border-[var(--vp-custom-block-tip-border)] bg-[var(--vp-custom-block-tip-bg)]"
+    class="CopyRight mb-12 p-4 relative border-solid border rounded-lg w-full border-[var(--vp-custom-block-tip-border)] bg-[var(--vp-custom-block-tip-bg)]"
   >
     <section class="flex flex-col gap-y-2 overflow-hidden">
       <div>
@@ -35,7 +35,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
             :href="getGitHubLink(author)"
             rel="noreferrer"
             target="_blank"
-            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-light)]"
+            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)]"
           >
             {{ author }}
           </a>
@@ -48,7 +48,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
             :href="currentHref"
             rel="noreferrer"
             target="_blank"
-            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-light)] break-all"
+            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)] break-all"
           >
             {{ currentHref }}
           </a>
@@ -62,7 +62,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
             :href="licenseLink"
             rel="noreferrer"
             target="_blank"
-            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-light)]"
+            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)]"
           >
             {{ license }}
           </a>
@@ -71,7 +71,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
             :href="YuNotesLink"
             rel="noreferrer"
             target="_blank"
-            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-light)]"
+            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)]"
             >YuNotes</a
           >
           并进行相关声明！

@@ -2,6 +2,8 @@ import { h, watch } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 //@ts-ignore
 import CopyRight from './components/copyRight.vue'
+//@ts-ignore
+import TeamPage from './components/teamPage.vue'
 import './styles/rainbow.css'
 import './styles/var.css'
 import './styles/overRides.css'
@@ -13,6 +15,7 @@ export default {
   ...DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
+      'home-features-after': () => h(TeamPage),
       'doc-footer-before': () => h(CopyRight)
     })
   },

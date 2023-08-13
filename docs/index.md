@@ -17,7 +17,7 @@ hero:
       link: /guide/阅读须知/
     - theme: alt
       text: 在GitHub上查看
-      link: https://github.com/vuejs/vitepress
+      link: https://github.com/Moyu-moyuing/YuNotes
 features:
 
 - icon: 💡
@@ -33,36 +33,4 @@ features:
   title: 前沿知识
   details: 涉及到作者所接触到的前沿知识，包括人工智能领域的深度学习方向、计算机图形学基础
 ---
-<script setup>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers
-} from 'vitepress/theme'
 
-const members = [
-  {
-    avatar: 'https://github.com/Moyu-moyuing.png',
-    name: '凌晨三点的修狗',
-    title: '认清形式，放弃幻想',
-    links: [
-      { icon: 'github', link: 'https://github.com/Moyu-moyuing' },
-    ]
-  },
-]
-</script>
-
-<VPTeamPage>
-  <VPTeamPageTitle>
-    <template #title>
-      核心成员介绍
-    </template>
-    <template #lead>
-      <!-- The development of VitePress is guided by an international
-      team, some of whom have chosen to be featured below. -->
-    </template>
-  </VPTeamPageTitle>
-  <VPTeamMembers
-    :members="members"
-  />
-</VPTeamPage>

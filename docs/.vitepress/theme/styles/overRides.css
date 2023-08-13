@@ -31,7 +31,9 @@ table {
   Also specify some classes twice to have higher specificity
   over scoped class data attribute.
 */
+.VPFooter a,
 .dark .vp-doc a,
+.dark .VPTeamPage a,
 .dark .vp-doc a > code,
 .dark .VPNavBarMenuLink.VPNavBarMenuLink:hover,
 .dark .VPNavBarMenuLink.VPNavBarMenuLink.active,
@@ -39,13 +41,24 @@ table {
 .dark .link.link.active,
 .dark .edit-link-button.edit-link-button,
 .dark .pager-link .title {
-  color: var(--vp-c-brand-lighter);
+  color: var(--vp-c-brand-lightest);
 }
 
+.VPFooter a:hover,
 .dark .vp-doc a:hover,
+.dark .VPTeamPage a:hover,
+.dark .edit-link-button.edit-link-button:hover,
 .dark .vp-doc a > code:hover {
-  color: var(--vp-c-brand-lightest);
+  color: var(--vp-c-brand-lighter);
   opacity: 1;
+}
+
+/* 为文字链接添加下划线效果*/
+.VPFooter a:hover,
+.CopyRight a:hover {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
 }
 
 /* Transition by color instead of opacity */
