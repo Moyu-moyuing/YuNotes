@@ -27,6 +27,11 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
   <div
     class="CopyRight mb-12 p-4 relative border-solid border rounded-lg w-full border-[var(--vp-custom-block-tip-border)] bg-[var(--vp-custom-block-tip-bg)]"
   >
+    <a :href="licenseLink" rel="noreferrer" target="_blank">
+      <Icon-ph-copyright-bold
+        class="absolute top-4 right-4 hover:text-[var(--vp-c-brand-lightest)] transition-[color] duration-[250ms] delay-0 ease-in-out"
+      />
+    </a>
     <section class="flex flex-col gap-y-2 overflow-hidden">
       <div>
         <span class="font-bold">本文作者：</span>
@@ -35,7 +40,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
             :href="getGitHubLink(author)"
             rel="noreferrer"
             target="_blank"
-            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)]"
+            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)] transition-[color] duration-[250ms] delay-0 ease-in-out hover:underline hover:underline-offset-2"
           >
             {{ author }}
           </a>
@@ -48,7 +53,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
             :href="currentHref"
             rel="noreferrer"
             target="_blank"
-            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)] break-all"
+            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)] break-all transition-[color] duration-[250ms] delay-0 ease-in-out hover:underline hover:underline-offset-2"
           >
             {{ currentHref }}
           </a>
@@ -62,7 +67,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
             :href="licenseLink"
             rel="noreferrer"
             target="_blank"
-            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)]"
+            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)] transition-[color] duration-[250ms] delay-0 ease-in-out hover:underline hover:underline-offset-2"
           >
             {{ license }}
           </a>
@@ -71,7 +76,7 @@ const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
             :href="YuNotesLink"
             rel="noreferrer"
             target="_blank"
-            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)]"
+            class="font-medium text-[var(--vp-custom-block-tip-text)] hover:text-[var(--vp-c-brand-lighter)] transition-[color] duration-[250ms] delay-0 ease-in-out hover:underline hover:underline-offset-2"
             >YuNotes</a
           >
           并进行相关声明！

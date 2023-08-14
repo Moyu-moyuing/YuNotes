@@ -54,11 +54,15 @@ table {
 }
 
 /* 为文字链接添加下划线效果*/
+.VPFooter a,
+.vp-doc a {
+  transition: color 0.5s;
+}
+
 .VPFooter a:hover,
-.CopyRight a:hover {
-    -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted;
-    text-underline-offset: 2px;
+.vp-doc a:hover{
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Transition by color instead of opacity */
