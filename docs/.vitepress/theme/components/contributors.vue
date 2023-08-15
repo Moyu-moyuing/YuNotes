@@ -43,7 +43,7 @@ const isNotEmpty: (arr: string | string[]) => number | false = arr => {
       {{ item }}
     </div>
   </div>
-  <div v-else class="flex gap-2 items-center text-[var(--vp-c-brand)]">
+  <div v-else class="flex gap-2 items-center">
     <a :href="getGitHubLink(defaultAuthor)" rel="noreferrer" target="_blank">
       <img :src="getAvatar(defaultAuthor)" class="w-8 h-8 rounded-full" />
     </a>

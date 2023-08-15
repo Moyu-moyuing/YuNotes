@@ -81,7 +81,7 @@ export default defineConfig({
     sidebarMenuLabel: '菜单栏',
     // 大纲标题以及大纲中要为页面显示的页眉级别
     outlineTitle: '大纲',
-    outline: 'deep',
+    outline: [1, 6],
     // 主题设置
     darkModeSwitchLabel: '主题'
   },
