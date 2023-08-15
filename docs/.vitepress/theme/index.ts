@@ -1,11 +1,8 @@
 import { h, watch } from 'vue'
 
 import DefaultTheme from 'vitepress/theme'
-//@ts-ignore
 import CopyRight from './components/copyRight.vue'
-//@ts-ignore
 import TeamPage from './components/teamPage.vue'
-//@ts-ignore
 import Contributors from './components/contributors.vue'
 
 import './styles/rainbow.css'
