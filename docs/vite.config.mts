@@ -30,14 +30,17 @@
 //   chineseSearchOptimize,
 //   pagefindPlugin
 // } from 'vitepress-plugin-pagefind'
+// import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
+import { MDPreprocessor } from './.vitepress/plugins/mdPreprocessor'
 
 export default defineConfig({
   plugins: [
+    MDPreprocessor(),
     // pagefindPlugin({
     //   // 自定义搜索框
     //   btnPlaceholder: '搜索',
@@ -74,6 +77,8 @@ export default defineConfig({
       //统一设置浮动布局
     }),
     Components({
+      // dirs: resolve(__dirname, '.vitepress/theme/components'),
+      // include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
         IconsResolver({
           componentPrefix: 'Icon'

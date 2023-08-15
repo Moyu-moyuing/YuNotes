@@ -1,9 +1,13 @@
 import { h, watch } from 'vue'
+
 import DefaultTheme from 'vitepress/theme'
 //@ts-ignore
 import CopyRight from './components/copyRight.vue'
 //@ts-ignore
 import TeamPage from './components/teamPage.vue'
+//@ts-ignore
+import Contributors from './components/contributors.vue'
+
 import './styles/rainbow.css'
 import './styles/var.css'
 import './styles/overRides.css'
@@ -19,7 +23,8 @@ export default {
       'doc-footer-before': () => h(CopyRight)
     })
   },
-  enhanceApp({ router }) {
+  enhanceApp({ app, router }) {
+    app.component('Contributors', Contributors)
     if (typeof window === 'undefined') return
 
     watch(

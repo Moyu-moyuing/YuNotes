@@ -7,8 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Contributors: typeof import('./theme/components/contributors.vue')['default']
+    CopyRight: typeof import('./theme/components/copyRight.vue')['default']
+    CustomLink: typeof import('./theme/components/customLink.vue')['default']
     IconPhCopyrightBold: typeof import('~icons/ph/copyright-bold')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TeamPage: typeof import('./theme/components/teamPage.vue')['default']
   }
 }
