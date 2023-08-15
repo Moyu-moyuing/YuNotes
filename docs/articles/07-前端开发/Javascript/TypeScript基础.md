@@ -1,4 +1,5 @@
 # TypeScript
+## TypeScript介绍
 
 TypeScript是JavaScript的超集，TypeScript=Type+JavaScript，在JS的基础上，为JS添加了类型支持。
 
@@ -12,9 +13,9 @@ TypeScript相对于JavaScript优势：
 - 支持最新的ECMAScript语法
 - TypeScript类型推断机制，不需要在代码中的每个地方都显示标注类型
 
-# TypeScript常用类型
+## TypeScript常用类型
 
-## 类型注解
+### 类型注解
 
 ```typescript
 let age: number=18
@@ -22,13 +23,13 @@ let age: number=18
 
 上述代码的 `:number`就是类型注解，为变量添加类型约束。类型注解约定了什么类型，就只能给变量赋值该类型的值。
 
-## JavaScript已有类型
+### JavaScript已有类型
 
 原始类型：number、string、boolean、null、undefined、symbol
 
 对象类型：object，包括数组、对象、函数等对象
 
-## **数组类型的写法**
+### **数组类型的写法**
 
 ```typescript
 let numbers: number[]=[1,2,3]
@@ -42,11 +43,11 @@ let arr: number | string[]=[1,'a',2,'b']
 
 > `|`**在TS中叫联合类型（由两个及以上类型组成的类型，表示可以是这些类型的任意一种）**
 
-## TypeScript新增类型
+### TypeScript新增类型
 
 联合类型、自定义类型（类型别名）、接口、元祖、字面量类型、枚举、void、any等
 
-## 类型别名
+### 类型别名
 
 当同一类型复杂被多次使用时，可以通过类型别名来简化该类型的使用。
 
@@ -57,7 +58,7 @@ type CustomArray=(number|string)[]
 let arr: CustomArray=[1,'a']
 ```
 
-## 函数类型
+### 函数类型
 
 函数类型指函数参数和返回值的类型，为函数指定类型有两种方式：
 
@@ -97,7 +98,7 @@ function mySlice(start?: number,end?:number):void{
 }
 ```
 
-## 对象类型
+### 对象类型
 
 JavaScript的对象是由属性和方法构成的，而TypeScript中对象的类型就是在描述对象的结构（有什么类型的属性和方法）
 
@@ -130,7 +131,7 @@ function myAxios( config: { url: string; method?: string }){
 
 可选属性的语法与函数可选参数的语法一致，都使用 `?`表示。
 
-## 接口
+### 接口
 
 当一个对象类型被多次使用时，一般会使用接口interface来描述对象的类型，达到复用的目的。
 
@@ -151,7 +152,7 @@ let person: Iperson={
 }
 ```
 
-### **继承**
+#### **继承**
 
 如果两个接口之间有相同的属性或方法，可以**将公共的属性或方法抽离出来，通过继承来实现复用。**
 
@@ -171,7 +172,7 @@ interface Point3D extends Point2D {z:number}
 
 使用extends继承关键字实现了接口Point3D继承了Point2D。继承后，Point3D就有了Point2D的所有属性和方法以及自己的属性和方法
 
-## 类型别名和接口
+### 类型别名和接口
 
 type和interface都可以给对象指定类型
 
@@ -199,7 +200,7 @@ type IPerson = {
 type NumStr = number | string
 ```
 
-## 元组
+### 元组
 
 有时在地图中常使用经纬坐标来标记位置信息，可以使用数组来记录坐标，两个元素都是数值类型，但是使用number[]并不严谨，因为该类型的数组可以出现任意多个数字。
 
@@ -214,7 +215,7 @@ let position:[number, number]=[27.54,116.45]
 let NumStr:[number,string]=[1,'a']
 ```
 
-## 类型推论
+### 类型推论
 
 在TypeScript中，某些没有明确指出类型的地方，TS的类型推论机制会帮助提供类型，换句话说，由于类型推论的存在，这些地方的类型注解可以省略。
 
@@ -239,7 +240,7 @@ function add(num1:number,num2:number){
 
 **能省略类型注解的地方尽量省略**。
 
-## 类型断言
+### 类型断言
 
 使用类型断言可以指定更具体的类型。
 
@@ -273,7 +274,7 @@ const alink=<HTMLAnchorElement>document.getElementById('link')
 
 使用命令 `console.dir($0)`即为选中的DOM元素，可以查看其JavaScript类型属性。
 
-## 字面量类型
+### 字面量类型
 
 ```typescript
 let str1='Hello TS'
@@ -284,7 +285,7 @@ const str2='Hello Ts'
 
 此处的 `'Hello TS'` 就是一个字面量类型，也就是说某个特定的字符串也可以作为TS中的类型。除字符串外，任意字面量都可以作为类型使用。
 
-### 使用场景
+#### 使用场景
 
 字面量类型通常配合联合类型一起使用，用来表示一组明确的可选值列表。
 
@@ -298,7 +299,7 @@ function changeDirection(direction:'up'|'down'|'left'|'right'){
 
 相比于string类型，使用字面量类型更加精确、严谨。
 
-## 枚举类型
+### 枚举类型
 
 枚举的功能类似于字面量类型+联合类型组合的功能，也可以表示一组明确的可选值。
 
@@ -358,7 +359,7 @@ var Direction;
 
 枚举与字面量类型+联合类型类似的功能相似，都用来表示一组明确的可选值列表。推荐使用字面量类型+联合类型组合方式，因为相比枚举，这种方式更加直观、高效。
 
-## any类型
+### any类型
 
 原则上不推荐使用any！这会让TypeScript变成AnyScript，失去TS 类型保护的优势，因为当值是any时，可以对该值进行任意操作，并且不会有代码提示。
 
@@ -373,7 +374,7 @@ const n:number=obj
 
 因为不推荐使用any，因此这两种情况都应该提供类型。
 
-## typeof
+### typeof
 
 JS中提供了typeof操作符，用来在JS中获取数据的类型。
 
@@ -407,9 +408,9 @@ let ret:typeof add(1,2)
 //报错
 ```
 
-# TypeScript高级类型
+## TypeScript高级类型
 
-## `class`类
+### `class`类
 
 TypeScript全面支持ES2015中引入的c `lass`关键字，并为其添加了类型注解和其他语法，比如可见性修饰符等等。
 
@@ -432,7 +433,7 @@ class Person{
 
 上述代码声明成员 `age`，类型为 `number`，无初始值。声明成员是 `gender`，并设置初试值，此时可以省略类型注解（TS类型推论为 `string`类型）。
 
-### `class`类的构造函数
+#### `class`类的构造函数
 
 ```typescript
 class Person{
@@ -449,7 +450,7 @@ const p=new Person(18,'男')
 
 上述代码：成员初始化（`age: number`）后，才可以通过 `this.age`访问实例成员。需要为构造函数指定类型注解，否则会被隐式推断为 `any`，构造函数不需要返回值类型。
 
-### `class`实例方法
+#### `class`实例方法
 
 ```typescript
 class Point{
@@ -468,7 +469,7 @@ p.scale(10)
 
 方法的类型注解（参数和返回值）与函数用法相同。
 
-### `class`类继承
+#### `class`类继承
 
 类继承有两种方式，一是 `extends`关键字继承父类，二是使用 `implements`关键字实现接口。JavaScript中只有extends关键字，而implements是TS提供的。
 
@@ -504,7 +505,7 @@ class Person implements Singable{
 
 上述代码通过 `implements`关键字让class实现接口。`Person`类实现接口 `Singable` 意味着，Person类中必须提供Singable接口中指定的所有方法和属性。
 
-### 可见修饰性
+#### 可见修饰性
 
 类成员可见性：可以使用TS来控制class的方法或属性对于class外的代码是否可见。
 
@@ -613,7 +614,7 @@ class Person implements Singable{
 
    只要是 `readonly`来修饰的属性，必须手动提供明确的类型。
 
-## 类型兼容性
+### 类型兼容性
 
 一共有两种类型系统：
 
@@ -635,7 +636,7 @@ const p:Point=new Point2D()
 
 但是如果在Nominal Type System中（C#、Java等）就是不同的类，类型无法兼容。
 
-### 对象之间的类型兼容性
+#### 对象之间的类型兼容性
 
 在结构化类型系统中，如果两个对象具有相同的形状，则认为它们属于同一类型，这种说法并不准确。对于对象类型来说，y的成员至少与x相同，则x兼容y（成员多的可以赋值给成员少的）。
 
@@ -647,7 +648,7 @@ const p:Point=new Point3D()
 
 上述代码中，`Point3D`的成员至少与 `Point`相同，则 `Point`兼容 `Point3D`，成员多的 `Point3D`可以赋值给成员少的 `Point`。
 
-### 接口之间的类型兼容性
+#### 接口之间的类型兼容性
 
 接口之间的兼容性类似于 `class`，并且 `class`和 `interface`之间也可以相互兼容。
 
@@ -667,7 +668,7 @@ class Point3D {x:number;y:number;z:number}
 let p3:Point2D=new Point3D()
 ```
 
-### 函数之间的类型兼容性
+#### 函数之间的类型兼容性
 
 函数之间的兼容性较为复杂，需要考虑是哪个方面：
 
@@ -746,7 +747,7 @@ let p3:Point2D=new Point3D()
 
    :::
 
-## 交叉类型 `&`
+### 交叉类型 `&`
 
 功能类似于接口继承，用于组合多个类型为一个类型。常用于对象类型。
 
@@ -765,7 +766,7 @@ let obj: PersonDetail={
 
 使用交叉类型后，新的类型PersonDetail就同时具备了Person和Contact所有属性类型。
 
-### 交叉类型 `&`和接口 `extends`的对比
+#### 交叉类型 `&`和接口 `extends`的对比
 
 相同点：都可以实现对象类型的组合。
 
@@ -805,7 +806,7 @@ let c:C={
 
 ![Untitled 2](https://cdn.jsdelivr.net/gh/Moyu-moyuing/ImageHostingWebsite@main/Img/202308081857665.png)
 
-## 泛型
+### 泛型
 
 泛型是可以在保证类型安全前提下，让函数等与多种类型一起工作，从而实现复用。常用于函数、接口、类中。
 
@@ -848,7 +849,7 @@ const str=id<string>('a')
 
 这样，通过泛型就做到了让函数与多种不同类型一起工作，实现了复用的同时保证了类型安全。
 
-### 简化
+#### 简化
 
 简化调用泛型函数：
 
@@ -865,7 +866,7 @@ const num=id(10)
 
 但是当编译器无法推断类型或者推断的类型不准确时，就需要显式地传入类型参数。
 
-### 泛型约束
+#### 泛型约束
 
 默认情况下，泛型函数的类型变量 `Type`可以代表多个类型，这导致无法访问任何属性。
 
@@ -905,7 +906,7 @@ function id<Type>(value:Type):Type{
 
    上述代码创建描述约束的接口ILength，该接口要求提供length属性。通过extends关键字使用该接口，为泛型（类型变量）添加约束。该约束表示：传入的类型必须具有length属性。传入的实参只要有length属性即可，符合接口的类型兼容性。
 
-### 多个泛型类型变量之间的约束
+#### 多个泛型类型变量之间的约束
 
 泛型的类型变量可以有多个，并且类型变量之间还可以约束。
 
@@ -924,7 +925,7 @@ getProp{person,'name'}
 
 这个实例中 `keyof Type`实际上获取的是 `person`对象所有键的联合类型，也就是 `'name'|'age'` 。类型变量 `Key`受 `Type`约束，可以理解为 `Key`只能是 `Type`所有键中的任意一个，或者说只能访问对象中存在的属性。
 
-### 泛型接口
+#### 泛型接口
 
 接口也可以配合泛型使用，以增加其灵活性和复用性。
 
@@ -962,7 +963,7 @@ nums.forEach(item=>{})
 
 当我们使用数组时，TS根据数组的不同类型，来自动将类型变量设置为相应的类型。
 
-### 泛型类
+#### 泛型类
 
 class也可以配合泛型使用。
 
@@ -1009,7 +1010,7 @@ myNum.defaultValue=10
 
 类似于泛型接口，在创建class实例时，在类名后面通过<类型>来指定明确的类型。
 
-### 泛型工具类型
+#### 泛型工具类型
 
 TS内置了一些常用的工具类型，来简化TS中的一些常见操作。
 
@@ -1076,7 +1077,7 @@ TS内置了一些常用的工具类型，来简化TS中的一些常见操作。
 
    Record工具类型有两个类型变量，Keys表示对象有哪些属性，Type表示对象属性的类型。构建的新对象类型 `RecordObj`表示，这个对象有三属性分别是a/b/c，属性类型都是 `string[]`。
 
-## 索引签名类型
+### 索引签名类型
 
 绝大多数情况下，都可以在使用对象前就确定对象的结构，并为对象添加准确的类型。
 
@@ -1105,7 +1106,7 @@ let arr:MyArray<number>=[1,3,5]
 
 上述代码中，`MyArray`接口模拟原生的数组接口，并使用 `[n:number]` 来作为索引签名类型。该索引签名类型表示：只要是 `number`类型的键（索引）都可以出现在数组中，或者说数组中可以有任意多个元素。同时也符合数组索引是 `number`类型这个前提。
 
-## 映射类型
+### 映射类型
 
 映射类型是基于旧类型创建新类型（对象类型），减少重复。
 
@@ -1144,7 +1145,7 @@ type Type3={[Key in keyof Props]:number}
 
 然后 `Key in...` 表示 `Key`可以是 `Props`中所有键名称中的任意一个。
 
-## 分析泛型工具类型Partial的实现
+### 分析泛型工具类型Partial的实现
 
 实际上，上述的泛型工具类型都是基于映射类型实现的。比如，`Partial<Type>`的实现。
 
@@ -1158,7 +1159,7 @@ type PartialProps=Partial<Props>
 
 `keyof T`即 `keyof Props`表示获取 `Props`的所有键，也就是 `'a'|'b'|'c'` 。在 `[]`后面添加?表示将这些属性变为可选的，以此实现 `Partial`的功能。冒号后面的 `T[P]`表示获取 `T`中每个键对应的类型。最终，新类型 `PartialProps`和旧类型 `Props`结构完全相同，只是让所有类型都变为可选的。
 
-## 索引查询类型
+### 索引查询类型
 
 `T[P]`语法，在TS中叫做索引查询（访问）类型，作用是用来查询属性的类型。
 
@@ -1189,15 +1190,15 @@ type TypeA=Props[keyof Props]
 
 使用keyof操作符获取Props中所有键对应的类型，结果是 `string | number | boolean` 。
 
-# 类型声明文件
+## 类型声明文件
 
-## 概述
+### 概述
 
 如今几乎所有的JavaScript应用都会引入许多第三方库来完成任务需求。这写第三方库无论是否是TS编写，最终都要编译成JS代码，才能发布使用。
 
 TS提供了类型，才有了代码提示和类型保护等机制。但在项目开发中使用第三方库时，它们几乎都有相对应的TS类型，这些类型如何来的？
 
-## TS的两种文件类型
+### TS的两种文件类型
 
 TS中有两种文件类型，`.ts`文件和 `.d.ts`文件。
 
@@ -1212,7 +1213,7 @@ TS中有两种文件类型，`.ts`文件和 `.d.ts`文件。
 
 .ts文件是implementation代码实现文件，.d.ts是declaration类型声明文件。
 
-## 类型声明文件
+### 类型声明文件
 
 类型声明文件是用来为已存在的JS库提供类型信息，即 `index.d.ts`文件。
 
@@ -1221,7 +1222,7 @@ TS中有两种文件类型，`.ts`文件和 `.d.ts`文件。
 - 使用已有的类型声明文件
 - 创建自己的类型声明文件
 
-### 使用已有的类型声明文件
+#### 使用已有的类型声明文件
 
 1. 内置类型声明文件
    TS为JS运行时可用的所有标准化内置API都提供了声明文件。
@@ -1261,7 +1262,7 @@ TS中有两种文件类型，`.ts`文件和 `.d.ts`文件。
 
      TS官网提供了DOC文档可以查询对应的 `@types/*`库。[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
 
-### 创建自己的类型声明文件
+#### 创建自己的类型声明文件
 
 1. 项目内共享类型
    如果多个.ts文件中都用到同一类型，此时可以创建.d.ts文件提供该类型，实现类型共享。
