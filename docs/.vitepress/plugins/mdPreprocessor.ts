@@ -16,7 +16,7 @@ export function MDPreprocessor(): Plugin {
       if (filename === 'docs' && i === 'index.md') return code
 
       // 在正文末尾插入“Contributors”标题以及贡献者组件
-      code += '## 贡献者\n<Contributors/>'
+      code += '\n## 贡献者\n<Contributors/>'
       return code
     }
   }
