@@ -1,7 +1,7 @@
 {
   // 项目选项
   "compilerOptions": {
-    "types":["vue"],
+    // "types":["vue"],
     "module": "ESNext", //生成代码模板标准
     "suppressImplicitAnyIndexErrors": true, //忽略所有索引错误
     "target": "esnext", //目标语言版本
@@ -19,7 +19,7 @@
     "lib": ["ESNext", "DOM"] //编译过程中需要引用的库
   },
   // 指定被编译文件所在目录
-  "include": ["docs", "docs/**/*.ts","docs/**/*.vue","docs/**/*.d.ts"],
+  "include": ["docs", "docs/**/*.ts","docs/**/*.vue"],
   // 指定不需要被编译的目录
   // **代表任意目录，*代表任意文件
   "exclude": ["**/node_modules/**", "**/dist/**"]
