@@ -11,7 +11,7 @@
     "docs:serve": "vitepress serve docs",
     "docs:preview": "vitepress preview docs",
     "lint": "eslint \"./docs/**/*.{vue,js,ts,mts}\" --fix",
-    "prettier-format": "prettier --config .prettierrc.cjs \"./docs/**/*.{vue,js,ts,,mts}\" --write",
+    "prettier-format": "prettier --config .prettierrc.cjs \"./docs/**/*.{vue,js,ts,mts}\" --write",
     "prepare": "husky install"
   },
   "author": "小雨",
@@ -34,6 +34,7 @@
     "postcss": "^8.4.27",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6",
     "unplugin-icons": "^0.16.5",
     "unplugin-vue-components": "^0.25.1",
     "vitepress": "^1.0.0-rc.4",
