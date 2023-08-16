@@ -18,7 +18,7 @@ if (frontmatter.value?.author) {
 }
 
 const currentHref = computed(() => {
-  return `${window.location.origin}${route.path}`
+  return `${location.origin}${route.path}`
 })
 
 const reName: (name: string) => string = name => {
