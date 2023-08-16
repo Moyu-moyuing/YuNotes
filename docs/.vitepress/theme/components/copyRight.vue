@@ -11,6 +11,7 @@ const license: string =
   'Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)'
 const licenseLink: string = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
 const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
+const YuNotesOrigin: string = 'https://moyu-moyuing.github.io'
 const author: Ref<string> = ref<string>(defaultAuthor)
 
 if (frontmatter.value?.author) {
@@ -18,7 +19,7 @@ if (frontmatter.value?.author) {
 }
 
 const currentHref = computed(() => {
-  return `${location.origin}${route.path}`
+  return `${YuNotesOrigin}${route.path}`
 })
 
 const reName: (name: string) => string = name => {
