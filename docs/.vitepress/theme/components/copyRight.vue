@@ -11,8 +11,7 @@ const license: string =
   'Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)'
 const licenseLink: string = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
 const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
-const DEV_Host: string = location.origin
-const PRO_Host: string = location.hostname
+const Host: string = location.origin
 const author: Ref<string> = ref<string>(defaultAuthor)
 
 if (frontmatter.value?.author) {
@@ -20,13 +19,7 @@ if (frontmatter.value?.author) {
 }
 
 const currentHref = computed(() => {
-  //@ts-ignore
-  if (import.meta.env.MODE === 'development') {
-    return `${DEV_Host}${route.path}`
-  } //@ts-ignore
-  else if (import.meta.env.MODE === 'production') {
-    return `${PRO_Host}${route.path}`
-  }
+  return `${Host}${route.path}`
 })
 
 const reName: (name: string) => string = name => {
