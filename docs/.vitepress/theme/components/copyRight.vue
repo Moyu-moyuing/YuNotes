@@ -1,26 +1,33 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { Ref } from 'vue'
-import { useData } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 
 const { frontmatter } = useData()
+const route = useRoute()
 
 const defaultAuthor: string = '凌晨三点的修狗'
-const author: Ref<string> = ref<string>(defaultAuthor)
-if (frontmatter.value?.author) {
-  author.value = frontmatter.value?.author
-}
-const reName: (name: string) => string = name => {
-  return name === '凌晨三点的修狗' ? 'Moyu-moyuing' : name
-}
-const currentHref: string = location.href
-const getGitHubLink: (name: string) => string = name => {
-  return `https://github.com/${reName(name)}`
-}
 const license: string =
   'Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)'
 const licenseLink: string = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
 const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
+const author: Ref<string> = ref<string>(defaultAuthor)
+
+if (frontmatter.value?.author) {
+  author.value = frontmatter.value?.author
+}
+
+const currentHref = computed(() => {
+  return `${window.location.origin}${route.path}`
+})
+
+const reName: (name: string) => string = name => {
+  return name === '凌晨三点的修狗' ? 'Moyu-moyuing' : name
+}
+
+const getGitHubLink: (name: string) => string = name => {
+  return `https://github.com/${reName(name)}`
+}
 </script>
 
 <template>
