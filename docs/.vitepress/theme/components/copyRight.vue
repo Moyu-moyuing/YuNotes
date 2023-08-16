@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import type { Ref } from 'vue'
 import { useData, useRoute } from 'vitepress'
 
@@ -13,10 +13,16 @@ const licenseLink: string = 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
 const YuNotesLink: string = 'https://moyu-moyuing.github.io/YuNotes/'
 const Host: string = location.origin
 const author: Ref<string> = ref<string>(defaultAuthor)
-
-if (frontmatter.value?.author) {
-  author.value = frontmatter.value?.author
-}
+watch(
+  () => frontmatter.value?.author,
+  newAuthor => {
+    if (newAuthor) {
+      author.value = newAuthor
+    } else {
+      author.value = defaultAuthor
+    }
+  }
+)
 
 const currentHref = computed(() => {
   return `${Host}${route.path}`
