@@ -1,7 +1,98 @@
 import { defineConfig } from 'vitepress'
+import mathjax3 from 'markdown-it-katex'
 // import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { getSidebar, getNavData } from './navSidebarUtil'
 import algolia from './algolia'
+
+const customElements = [
+  'math',
+  'maction',
+  'maligngroup',
+  'malignmark',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mi',
+  'mlongdiv',
+  'mmultiscripts',
+  'mn',
+  'mo',
+  'mover',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'ms',
+  'mscarries',
+  'mscarry',
+  'mscarries',
+  'msgroup',
+  'mstack',
+  'mlongdiv',
+  'msline',
+  'mstack',
+  'mspace',
+  'msqrt',
+  'msrow',
+  'mstack',
+  'mstack',
+  'mstyle',
+  'msub',
+  'msup',
+  'msubsup',
+  'mtable',
+  'mtd',
+  'mtext',
+  'mtr',
+  'munder',
+  'munderover',
+  'semantics',
+  'math',
+  'mi',
+  'mn',
+  'mo',
+  'ms',
+  'mspace',
+  'mtext',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'msqrt',
+  'mstyle',
+  'mmultiscripts',
+  'mover',
+  'mprescripts',
+  'msub',
+  'msubsup',
+  'msup',
+  'munder',
+  'munderover',
+  'none',
+  'maligngroup',
+  'malignmark',
+  'mtable',
+  'mtd',
+  'mtr',
+  'mlongdiv',
+  'mscarries',
+  'mscarry',
+  'msgroup',
+  'msline',
+  'msrow',
+  'mstack',
+  'maction',
+  'semantics',
+  'annotation',
+  'annotation-xml',
+  'mjx-container',
+  'mjx-assistive-mml'
+]
 
 // 解构defineConfig
 
@@ -21,10 +112,24 @@ export default defineConfig({
   markdown: {
     theme: 'material-theme-palenight',
     // markdown代码板块主题
-    lineNumbers: true
+    lineNumbers: true,
     // 代码行数标识
+    config: md => {
+      md.use(mathjax3)
+    }
+    //使用mathjax3渲染LaTeX公式
   },
-  head: [['link', { rel: 'icon', href: '/YuNotes/img/imge.svg' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/YuNotes/img/imge.svg' }],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css',
+        crossorigin: ''
+      }
+    ]
+  ],
   themeConfig: {
     siteTitle: 'YuNotes',
     logo: '/img/imge.svg',
@@ -114,7 +219,7 @@ export default defineConfig({
     // 主题设置
     darkModeSwitchLabel: '主题'
   },
-  cleanUrls: true
+  cleanUrls: true,
   //搜索配置
   // vite: {
   //   plugins:[pagefindPlugin({
@@ -123,4 +228,11 @@ export default defineConfig({
 
   //   })],
   // }
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: tag => customElements.includes(tag)
+      }
+    }
+  }
 })
