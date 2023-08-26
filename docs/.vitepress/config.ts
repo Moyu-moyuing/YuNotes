@@ -187,7 +187,8 @@ export default defineConfig({
                   ></path>
                 </svg>`
         },
-        link: 'https://blog.csdn.net/weixin_43837483?spm=1011.2421.3001.5343'
+        link: 'https://blog.csdn.net/weixin_43837483?spm=1011.2421.3001.5343',
+        ariaLabel: 'csdn'
       }
     ],
     footer: {

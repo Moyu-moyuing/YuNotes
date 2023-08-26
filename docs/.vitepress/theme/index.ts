@@ -1,10 +1,12 @@
 import { h, watch } from 'vue'
+import { inBrowser } from 'vitepress'
+import busuanzi from 'busuanzi.pure.js'
 
 import DefaultTheme from 'vitepress/theme'
 import CopyRight from './components/copyRight.vue'
 import TeamPage from './components/teamPage.vue'
 import Contributors from './components/contributors.vue'
-
+import AccessData from './components/accessData.vue'
 import './styles/rainbow.css'
 import './styles/var.css'
 import './styles/overRides.css'
@@ -16,7 +18,7 @@ export default {
   ...DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      'home-features-after': () => h(TeamPage),
+      'home-features-after': () => [h(AccessData), h(TeamPage)],
       'doc-footer-before': () => h(CopyRight)
     })
   },
@@ -24,6 +26,11 @@ export default {
     app.component('Contributors', Contributors)
     if (typeof window === 'undefined') return
 
+    if (inBrowser) {
+      router.onAfterRouteChanged = () => {
+        busuanzi.fetch()
+      }
+    }
     watch(
       () => router.route.data.relativePath,
       () => updateHomePageStyle(location.pathname === '/YuNotes/'),
