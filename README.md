@@ -3,7 +3,9 @@
 </p>
 
 <h1 align="center">
+<a href="https://moyu-moyuing.github.io/YuNotes/" target="__blank">
 YuNotes
+</a>
 </h1>
 
 <p align="center">
