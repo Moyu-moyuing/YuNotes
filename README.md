@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-<a href="https://moyu-moyuing.github.io/YuNotes/" target="__blank">
+<a href="https://moyu-moyuing.github.io/YuNotes/" target="_blank">
 YuNotes
 </a>
 </h1>
@@ -12,6 +12,6 @@ YuNotes
 凌晨三点的修🐶的个人技术网站
 </p>
 <p align="center">
-<a href="https://github.com/Moyu-moyuing/YuNotes" target="__blank">
+<a href="https://github.com/Moyu-moyuing/YuNotes" target="_blank">
 <img alt="MIT" src="https://img.shields.io/github/license/Moyu-moyuing/YuNotes"></a>
 </p>
