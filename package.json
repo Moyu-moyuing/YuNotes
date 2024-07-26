@@ -14,7 +14,7 @@
     "prettier-format": "prettier --config .prettierrc.cjs \"./docs/**/*.{vue,js,ts,mts}\" --write",
     "prepare": "husky install"
   },
-  "author": "小雨",
+  "author": "moyu",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",

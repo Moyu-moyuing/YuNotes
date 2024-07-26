@@ -219,6 +219,7 @@ export default defineConfig({
     outline: [1, 6],
     // 主题设置
     darkModeSwitchLabel: '主题'
+    // externalLinkIcon: true
   },
   cleanUrls: true,
   //搜索配置
@@ -236,4 +237,14 @@ export default defineConfig({
       }
     }
   }
+
+  // transformHtml: (code, id, _) => {
+  //   if (id.endsWith('.md')) {
+  //     const [filename, i] = id.split('/').slice(-2)
+  //     // 是首页的 index.md直接跳过
+  //     if (!(filename === 'docs' && i === 'index.md'))
+  //       // 在正文末尾插入“Contributors”标题以及贡献者组件
+  //       code += '\n## 贡献者\n<Contributors/>'
+  //   }
+  // }
 })

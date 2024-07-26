@@ -5,3 +5,4 @@ docs/.vitepress/dist
 docs/.vitepress/theme/styles/flexSearch.css
 docs/.vitepress/theme/styles/pagefind.css
 docs/.vitepress/theme/styles/katex.min.css
+.idea
