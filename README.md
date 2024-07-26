@@ -20,7 +20,7 @@ YuNotes
 
 该仓库用于存放作者使用Vitepress构建的知识库网站笔记，长期维护。主要内容包含以下：
 
-*教程安利* 最近在研习大模型相关技术，由上海人工智能实验室主办的书生·浦语大模型实战营第三期正在进行，有兴趣的同学可以查看[InternLM](https://github.com/InternLM/Tutorial)
+**教程安利** 最近在研习大模型相关技术，由上海人工智能实验室主办的书生·浦语大模型实战营第三期正在进行，有兴趣的同学可以查看[InternLM](https://github.com/InternLM/Tutorial)
 
 ### 💡技术博客
 
