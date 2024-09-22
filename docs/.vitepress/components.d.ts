@@ -10,13 +10,8 @@ declare module 'vue' {
     AccessData: typeof import('./theme/components/accessData.vue')['default']
     Contributors: typeof import('./theme/components/contributors.vue')['default']
     CopyRight: typeof import('./theme/components/copyRight.vue')['default']
-    CustomLink: typeof import('./theme/components/customLink.vue')['default']
-    'IconFa6Solid:heartPulse': typeof import('~icons/fa6-solid/heart-pulse')['default']
     'IconFluentEmojiFlat:dogFace': typeof import('~icons/fluent-emoji-flat/dog-face')['default']
     IconPhCopyrightBold: typeof import('~icons/ph/copyright-bold')['default']
-    'IconPixelarticons:eye': typeof import('~icons/pixelarticons/eye')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
     TeamPage: typeof import('./theme/components/teamPage.vue')['default']
   }
 }
